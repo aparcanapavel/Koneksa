@@ -64,7 +64,6 @@ const deliveryAidTests = () => {
         assert.deepEqual(deliveryAid.getLocation(), [0,-1]);
       });
       it('should move delivery aid left on "<"', () => {
-        deliveryAid._reset();
         deliveryAid.move('<');
 
         assert.deepEqual(deliveryAid.getLocation(), [-1, 0]);
@@ -76,15 +75,15 @@ const deliveryAidTests = () => {
       });
     });
 
-    describe('mocha before hooks', function () {
-      before(() => console.log('*** top-level before()'));
-      beforeEach(() => console.log('*** top-level beforeEach()'));
-      describe('nesting', function () {
-        before(() => console.log('*** nested before()'));
-        beforeEach(() => console.log('*** nested beforeEach()'));
-        it('is a nested spec', () => true);
-      });
-    });
+    // describe('mocha before hooks', function () {
+    //   before(() => console.log('*** top-level before()'));
+    //   beforeEach(() => console.log('*** top-level beforeEach()'));
+    //   describe('nesting', function () {
+    //     before(() => console.log('*** nested before()'));
+    //     beforeEach(() => console.log('*** nested beforeEach()'));
+    //     it('is a nested spec', () => true);
+    //   });
+    // });
     
   });
 }

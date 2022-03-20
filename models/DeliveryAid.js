@@ -23,7 +23,7 @@ class DeliveryAid{
   move(direction){
     if(!['^', 'v', '>', '<'].includes(direction)) return false;
     
-    let newCoordinates = [];
+    let newCoordinates;
 
     switch (true) {
       case direction === '^':
@@ -50,13 +50,6 @@ class DeliveryAid{
 
     return true;
   }
-
-// for testing purposes
-  _reset(){
-    this.pizzasDelivered = 1;
-    this.location = [0,0];
-  }
-
 }
 
 module.exports = DeliveryAid;
