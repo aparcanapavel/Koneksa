@@ -8,14 +8,16 @@ class Dispatcher {
   /**
    * dispatch();
    * determines what part to execute.
-   * @param {string} switchKey
+   * @param switchKey
    */
   dispatch(switchKey){
 
-    if(switchKey === 1){
+    const switchInt = parseInt(switchKey);
+
+    if(switchInt === 1){
       
       return true;
-    } else if(switchKey === 2){
+    } else if(switchInt === 2){
 
       return true;
     }

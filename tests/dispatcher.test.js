@@ -11,15 +11,39 @@ const dispatcherTests = () => {
     });
 
     describe('dispatch()', function () {
-      it("should be able to tell if dispatching part 1 or part 2 via Nums", function() {
+      describe("should be able to tell if dispatching part 1 or part 2 via Nums", function() {
         it("should be able to tell if dispatching part 1", function() {
           assert.equal(dispatcher.dispatch(1), true);
         });
         it("should be able to tell if dispatching part 2", function() {
           assert.equal(dispatcher.dispatch(2), true);
         });
-        it("should be able to tell if dispatching part 2", function() {
+        it("should NOT dispatch if 3", function() {
           assert.notEqual(dispatcher.dispatch(3), true);
+        });
+      });
+
+      describe("should be able to tell if dispatching part 1 or part 2 via Strings", function() {
+        it("should be able to tell if dispatching part 1", function() {
+          assert.equal(dispatcher.dispatch('1'), true);
+        });
+        it("should be able to tell if dispatching part 2", function() {
+          assert.equal(dispatcher.dispatch('2'), true);
+        });
+        it("should NOT dispatch if 3", function() {
+          assert.notEqual(dispatcher.dispatch('3'), true);
+        });
+      });
+
+      describe("should be able to tell if input is NOT part 1 or part 2", function() {
+        it("should return false if entering a random string", function() {
+          assert.equal(dispatcher.dispatch('random'), false);
+        });
+        it("should return false if entering other numbers", function() {
+          assert.equal(dispatcher.dispatch('3'), false);
+          assert.equal(dispatcher.dispatch('0'), false);
+          assert.equal(dispatcher.dispatch(0), false);
+          assert.equal(dispatcher.dispatch(3), false);
         });
       });
     });
