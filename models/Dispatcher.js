@@ -11,7 +11,6 @@ class Dispatcher {
    * @param switchKey
    */
   dispatch(switchKey){
-
     const switchInt = parseInt(switchKey);
 
     if(switchInt === 1){
@@ -23,6 +22,17 @@ class Dispatcher {
     }
 
     return false;
+  }
+
+  /**
+   * dispatchDriver();
+   * sends the driver all the dispatchs at ones
+   * @param {string} dispatchStr
+   */
+  dispatchDriver(dispatchStr){
+    if(typeof dispatchStr !== "string") return false;
+    
+    return true;
   }
 
 }

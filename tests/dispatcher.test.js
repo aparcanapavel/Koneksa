@@ -47,6 +47,16 @@ const dispatcherTests = () => {
         });
       });
     });
+
+    describe('dispatchDriver()', function () {
+      it("should be able to tell if dispatchStr is NOT a string", function() {
+        assert.equal(dispatcher.dispatchDriver(123), false);
+      });
+
+      it("should be able to tell if dispatchStr IS a string", function() {
+        assert.equal(dispatcher.dispatchDriver("test"), true);
+      });
+    });
     
   });
 }
