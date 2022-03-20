@@ -6,6 +6,6 @@ const DeliveryAidTests = require('./tests/deliveryAid.test');
  */
 
 describe('Koneksa Tests', function () {
-  DispatcherTests.dispatcherTests();
+  DispatcherTests.dispatcherTests();  
   DeliveryAidTests.deliveryAidTests();
 })

@@ -10,6 +10,10 @@ const deliveryAidTests = () => {
       assert.deepEqual(deliveryAid.location, [0,0]);
     });
 
+    it('should have pizzasDelivered = 1', () => {
+      assert.equal(deliveryAid.pizzasDelivered, 1);
+    })
+
     
     
   });
