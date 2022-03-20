@@ -6,8 +6,14 @@ const dispatcher = new Dispatcher(dispatchString);
 
 const dispatcherTests = () => {
   describe("Dispatcher", function() {
-    it("should be able to return the dispatch string via getDispatch()", function() {
-      assert.equal(dispatcher.getDispatch(), dispatchString);
+    it("should set the dispatchString instance variable to the input", function() {
+      assert.equal(dispatcher.dispatchString, dispatchString);
+    });
+
+    describe("getDispatch()", function() {
+      it('should return the dispatch string', () => {
+        assert.equal(dispatcher.getDispatch(), dispatchString);
+      });
     });
 
     describe('dispatch()', function () {
