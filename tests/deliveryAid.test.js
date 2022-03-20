@@ -27,6 +27,11 @@ const deliveryAidTests = () => {
       it('should return false if parameter is not an array', () => {
         assert.equal(deliveryAid.setLocation('[0,0]'), false);
       });
+      it('should set a new location', () => {
+        deliveryAid.setLocation([0,1]);
+        assert.deepEqual(deliveryAid.getLocation(), [0,1]);
+        assert.notDeepEqual(deliveryAid.getLocation(), [0,0]);
+      });
     });
 
     

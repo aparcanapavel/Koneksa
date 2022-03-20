@@ -10,11 +10,13 @@ class DeliveryAid{
 
   setLocation(coordinates){ 
     // validate coordinates
-    if(typeof coordinates !== "object") return false;
-    
-    this.location = coordinates; 
+    if(coordinates instanceof Array){
+      this.location = coordinates; 
 
-    return true;
+      return true;
+    } else{
+      return false;
+    }
   }
 
 }
