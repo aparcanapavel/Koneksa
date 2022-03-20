@@ -12,6 +12,15 @@ class Dispatcher {
    */
   dispatch(switchKey){
 
+    if(switchKey === 1){
+      
+      return true;
+    } else if(switchKey === 2){
+
+      return true;
+    }
+
+    return false;
   }
 
 }
