@@ -1,4 +1,5 @@
 const DispatcherTests = require('./tests/dispatcher.test');
+const DeliveryAidTests = require('./tests/deliveryAid.test');
 
 /**
  * combining all tests here.
@@ -6,4 +7,5 @@ const DispatcherTests = require('./tests/dispatcher.test');
 
 describe('Koneksa Tests', function () {
   DispatcherTests.dispatcherTests();
+  DeliveryAidTests.deliveryAidTests();
 })
