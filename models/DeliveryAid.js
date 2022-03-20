@@ -1,7 +1,9 @@
 class DeliveryAid{
   constructor(){
-    this.pizzasDelivered = 1; // counts for the 1st move
     this.location = [0,0] // to know their whereabouts
+    this.housesDelivered = {
+      '[0,0]': 1
+    }
   }
 
   getLocation(){
@@ -9,14 +11,25 @@ class DeliveryAid{
   }
 
   getPizzasDelivered(){
-    return this.pizzasDelivered;
+    // return the length of keys of the Houses delivered
+    return Object.keys(this.housesDelivered).length;
+  }
+
+  updateDeliveries(coords){
+    if(this.housesDelivered[coords]){
+      this.housesDelivered[coords] += 1;
+    }else {
+      this.housesDelivered[coords] = 1;
+    }
   }
 
   setCoordinates(coordinates){ 
     // validate coordinates & updates pizzas delivered
     if(coordinates instanceof Array){
       this.location = coordinates; 
-      this.pizzasDelivered += 1;
+      
+      const coordsAsStr = String(coordinates);
+      this.updateDeliveries(coordsAsStr);
 
       return true;
     } else{

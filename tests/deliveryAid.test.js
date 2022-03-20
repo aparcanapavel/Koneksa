@@ -10,10 +10,6 @@ const deliveryAidTests = () => {
       assert.deepEqual(deliveryAid.location, [0,0]);
     });
 
-    it('should have pizzasDelivered = 1', () => {
-      assert.equal(deliveryAid.pizzasDelivered, 1);
-    })
-
     describe('getLocation()', () => {
       it('should return the location', () => {
         assert.equal(deliveryAid.location, deliveryAid.getLocation());
@@ -22,7 +18,7 @@ const deliveryAidTests = () => {
 
     describe('getPizzasDelivered()', () => {
       it('should return the pizzas delivered', () => {
-        assert.equal(deliveryAid.pizzasDelivered, 1);
+        assert.equal(deliveryAid.getPizzasDelivered(), 1);
       });
     });
 
@@ -39,19 +35,21 @@ const deliveryAidTests = () => {
         assert.notDeepEqual(deliveryAid.getLocation(), [0,0]);
       });
       it('should update pizzas delivered by 1', () => {
-        deliveryAid.setCoordinates([0,0]);
-        deliveryAid.pizzasDelivered = 1;
-
+        deliveryAid.housesDelivered = {
+          '[0,0]': 1
+        }
         deliveryAid.setCoordinates([0,0]);
       
-        assert.equal(deliveryAid.pizzasDelivered, 2);
+        assert.equal(deliveryAid.getPizzasDelivered(), 2);
       });
     });
 
     describe('move()', () => {
       beforeEach(() => {
         deliveryAid.setCoordinates([0,0]);
-        deliveryAid.pizzasDelivered = 1;
+        deliveryAid.housesDelivered = {
+          '[0,0]': 1
+        }
       });
       it('should return early if move direction is invalid', () => {
         assert.equal(deliveryAid.move('+'), false);
