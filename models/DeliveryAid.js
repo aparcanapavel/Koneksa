@@ -8,8 +8,12 @@ class DeliveryAid{
     return this.location;
   }
 
+  getPizzasDelivered(){
+    return this.pizzasDelivered;
+  }
+
   setCoordinates(coordinates){ 
-    // validate coordinates
+    // validate coordinates & updates pizzas delivered
     if(coordinates instanceof Array){
       this.location = coordinates; 
       this.pizzasDelivered += 1;

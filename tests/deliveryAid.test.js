@@ -20,6 +20,12 @@ const deliveryAidTests = () => {
       });
     });
 
+    describe('getPizzasDelivered()', () => {
+      it('should return the pizzas delivered', () => {
+        assert.equal(deliveryAid.pizzasDelivered, 1);
+      });
+    });
+
     describe('setCoordinates()', () => {
       it('should return true if parameter is of type array', () => {
         assert.equal(deliveryAid.setCoordinates([0,0]), true);
