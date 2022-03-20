@@ -4,6 +4,19 @@ class DeliveryAid{
     this.location = [0,0] // to know their whereabouts
   }
 
+  getLocation(){
+    return this.location;
+  }
+
+  setLocation(coordinates){ 
+    // validate coordinates
+    if(typeof coordinates !== "object") return false;
+    
+    this.location = coordinates; 
+
+    return true;
+  }
+
 }
 
 module.exports = DeliveryAid;

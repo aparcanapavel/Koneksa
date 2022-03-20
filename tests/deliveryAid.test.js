@@ -14,6 +14,21 @@ const deliveryAidTests = () => {
       assert.equal(deliveryAid.pizzasDelivered, 1);
     })
 
+    describe('getLocation()', () => {
+      it('should return the location', () => {
+        assert.equal(deliveryAid.location, deliveryAid.getLocation());
+      });
+    });
+
+    describe('setLocation()', () => {
+      it('should return true if parameter is of type array', () => {
+        assert.equal(deliveryAid.setLocation([0,0]), true);
+      });
+      it('should return false if parameter is not an array', () => {
+        assert.equal(deliveryAid.setLocation('[0,0]'), false);
+      });
+    });
+
     
     
   });
