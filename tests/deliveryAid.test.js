@@ -1,8 +1,7 @@
 const DeliveryAid = require('../models/DeliveryAid');
 const assert = require('assert').strict;
 
-const dispatchString = '^^<<v<<v><v^^';
-const deliveryAid = new DeliveryAid(dispatchString);
+const deliveryAid = new DeliveryAid();
 
 const deliveryAidTests = () => {
   describe("DeliveryAid", function() {
@@ -16,9 +15,24 @@ const deliveryAidTests = () => {
       });
     });
 
+    describe('getHousesDelivered()', () => {
+      deliveryAid.setCoordinates([0,0]);
+      deliveryAid.housesDelivered = {
+        '0,0': 1
+      }
+
+      deliveryAid.dispatch('^>v<')
+
+      // console.log('deliveryAid.housesDelivered',deliveryAid.housesDelivered)
+      
+      it('should return the housesDelivered Obj', () => {
+        assert.deepEqual(deliveryAid.getHousesDelivered(), { '0,0': 2, '0,1': 1, '1,1': 1, '1,0': 1 });
+      });
+    });
+
     describe('getPizzasDelivered()', () => {
       it('should return the pizzas delivered', () => {
-        assert.equal(deliveryAid.getPizzasDelivered(), 1);
+        assert.equal(deliveryAid.getPizzasDelivered(), 4);
       });
     });
 
@@ -27,7 +41,7 @@ const deliveryAidTests = () => {
         assert.equal(deliveryAid.setCoordinates([0,0]), true);
       });
       it('should return false if parameter is not an array', () => {
-        assert.equal(deliveryAid.setCoordinates('[0,0]'), false);
+        assert.equal(deliveryAid.setCoordinates('0,0'), false);
       });
       it('should set a new location', () => {
         deliveryAid.setCoordinates([0,1]);
@@ -36,9 +50,9 @@ const deliveryAidTests = () => {
       });
       it('should update pizzas delivered by 1', () => {
         deliveryAid.housesDelivered = {
-          '[0,0]': 1
+          '0,0': 1
         }
-        deliveryAid.setCoordinates([0,0]);
+        deliveryAid.setCoordinates([0,1]);
       
         assert.equal(deliveryAid.getPizzasDelivered(), 2);
       });
@@ -48,7 +62,7 @@ const deliveryAidTests = () => {
       it('should call the move method with each iteration', () =>{
         deliveryAid.setCoordinates([0,0]);
         deliveryAid.housesDelivered = {
-          '[0,0]': 1
+          '0,0': 1
         }
 
         deliveryAid.dispatch('>');
@@ -58,7 +72,7 @@ const deliveryAidTests = () => {
       it('should call the move method with each iteration', () =>{
         deliveryAid.setCoordinates([0,0]);
         deliveryAid.housesDelivered = {
-          '[0,0]': 1
+          '0,0': 1
         }
 
         deliveryAid.dispatch('^>v<');
@@ -71,7 +85,7 @@ const deliveryAidTests = () => {
       beforeEach(() => {
         deliveryAid.setCoordinates([0,0]);
         deliveryAid.housesDelivered = {
-          '[0,0]': 1
+          '0,0': 1
         }
       });
       it('should return early if move direction is invalid', () => {

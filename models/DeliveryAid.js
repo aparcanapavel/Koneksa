@@ -16,6 +16,10 @@ class DeliveryAid{
     return Object.keys(this.housesDelivered).length;
   }
 
+  getHousesDelivered() {
+    return this.housesDelivered;
+  }
+
   updateDeliveries(coords){
     if(this.housesDelivered[coords]){
       this.housesDelivered[coords] += 1;

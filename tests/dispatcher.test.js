@@ -73,6 +73,26 @@ const dispatcherTests = () => {
         assert.equal(dispatcher.dispatchDayTwo("test"), true);
       });
     });
+
+    // describe('dispatchDrivers()', function () {
+    //   const DeliveryAid = require('../models/DeliveryAid');
+    //   const driver = new DeliveryAid();
+    //   const goat = new DeliveryAid();
+    //   driver.setCoordinates([0,0]);
+    //   driver.housesDelivered = {
+    //     '0,0': 1
+    //   }
+    //   goat.setCoordinates([0,0]);
+    //   goat.housesDelivered = {
+    //     '0,0': 1
+    //   }
+
+      
+    //   it("should be able to tell if odd or even", function() {
+    //     dispatcher.dispatchDrivers(driver, goat, '^v');
+    //     assert.equal(true, true);
+    //   });
+    // });
     
   });
 }

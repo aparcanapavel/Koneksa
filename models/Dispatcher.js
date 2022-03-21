@@ -48,9 +48,35 @@ class Dispatcher {
     if(typeof dispatchStr !== "string") return false;
 
     const driver = new DeliveryAid();
-    const goat = new DeliveryAid()
+    const goat = new DeliveryAid();
+
+    if(driver && goat){
+      this.dispatchDrivers(driver, goat, dispatchStr);
+    }
 
     return true;
+  }
+
+  dispatchDrivers(driver, goat, string){
+    let idx = 0;
+    for(const direction of string.split('')){
+      if(idx%2){
+        // odd 1,3,5...
+        driver.move(direction);
+      } else {
+        // even 0,2,4...
+        goat.move(direction);
+      }
+      
+      idx += 1;
+    }
+
+    const driverDeliveries = driver.getPizzasDelivered();
+    const goatDeliveries = goat.getPizzasDelivered();
+    
+    // console.log('Diver Deliveries: ', driverDeliveries);
+    // console.log('GOAT Deliveries: ', goatDeliveries);
+    // console.log('Total Houses: ', driverDeliveries + goatDeliveries);
   }
 
 }
