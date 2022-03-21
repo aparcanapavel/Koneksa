@@ -1,4 +1,4 @@
-const PizzaDelivery = require('../index.js');
+const PizzaDelivery = require('../models/PizzaDelivery');
 const assert = require('assert').strict;
 
 const pizzaDelivery = new PizzaDelivery();
