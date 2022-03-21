@@ -1,5 +1,5 @@
 # Koneksa
-Koneksa Coding Challenge about pizza delivery
+Pizza Delivery Challenge
 
 ## Branches:
 - main:
