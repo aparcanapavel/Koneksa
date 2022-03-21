@@ -10,4 +10,4 @@ describe('Koneksa Tests', function () {
   DispatcherTests.dispatcherTests();  
   DeliveryAidTests.deliveryAidTests();
   PizzaDeliveryTests.pizzaDeliveryTests();
-})
+});

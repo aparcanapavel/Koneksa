@@ -1,3 +1,5 @@
+const DeliveryAid = require('./DeliveryAid');
+
 class Dispatcher {
   constructor(dispatchString) {
     this.dispatchString = dispatchString;
@@ -14,7 +16,7 @@ class Dispatcher {
     const switchInt = parseInt(switchKey);
 
     if(switchInt === 1){
-      
+      this.dispatchDriver();
       return true;
     } else if(switchInt === 2){
 
@@ -31,6 +33,10 @@ class Dispatcher {
    */
   dispatchDriver(dispatchStr){
     if(typeof dispatchStr !== "string") return false;
+    
+    const driver = new DeliveryAid();
+
+    if(driver) driver.dispatch(dispatchStr);
     
     return true;
   }

@@ -37,6 +37,10 @@ class DeliveryAid{
     }
   }
 
+  dispatch(dispatchStr){
+    //iterate through and call move()
+  }
+
   move(direction){
     if(!['^', 'v', '>', '<'].includes(direction)) return false;
     

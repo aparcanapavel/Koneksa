@@ -1,6 +1,6 @@
 const Dispatcher = require('./Dispatcher');
 const DeliveryAid = require('./DeliveryAid');
-const prompt = require('prompt-sync')();
+const prompt = require('prompt-sync')({sigint: true});
 
 class PizzaDelivery{
   constructor(){
@@ -12,9 +12,6 @@ class PizzaDelivery{
     console.log('dispatch str', dispatchString);
   }
 }
-
-const pizzaDeliver = new PizzaDelivery();
-// if(pizzaDeliver) pizzaDeliver.start();
 
 module.exports = PizzaDelivery;
 
