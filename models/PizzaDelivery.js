@@ -9,7 +9,9 @@ class PizzaDelivery{
 
   start(){
     const dispatchString = prompt('Enter Dispatch String: ');
-    console.log('dispatch str', dispatchString);
+
+    const dayOneDispatcher = new Dispatcher(dispatchString);
+    dayOneDispatcher.dispatch(1);
   }
 }
 

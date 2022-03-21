@@ -2,7 +2,7 @@ class DeliveryAid{
   constructor(){
     this.location = [0,0] // to know their whereabouts
     this.housesDelivered = {
-      '[0,0]': 1
+      '0,0': 1
     }
   }
 
@@ -12,6 +12,7 @@ class DeliveryAid{
 
   getPizzasDelivered(){
     // return the length of keys of the Houses delivered
+    console.log('this.housesDelivered', this.housesDelivered)
     return Object.keys(this.housesDelivered).length;
   }
 

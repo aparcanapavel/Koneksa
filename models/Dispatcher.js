@@ -16,7 +16,7 @@ class Dispatcher {
     const switchInt = parseInt(switchKey);
 
     if(switchInt === 1){
-      this.dispatchDriver();
+      this.dispatchDriver(this.dispatchString);
       return true;
     } else if(switchInt === 2){
 
@@ -36,7 +36,10 @@ class Dispatcher {
     
     const driver = new DeliveryAid();
 
-    if(driver) driver.dispatch(dispatchStr);
+    if(driver){
+      driver.dispatch(dispatchStr);
+      console.log('\nPizzas Delivered: ', driver.getPizzasDelivered())
+    }
     
     return true;
   }
