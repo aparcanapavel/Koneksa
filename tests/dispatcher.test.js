@@ -10,6 +10,9 @@ const dispatcherTests = () => {
     it("should set the dispatchString instance variable to the input", function() {
       assert.equal(dispatcher.dispatchString, dispatchString);
     });
+    it("should set totalDeliveries to null", function() {
+      assert.equal(dispatcher.totalDeliveries, undefined);
+    });
 
     describe("getDispatch()", function() {
       it('should return the dispatch string', () => {
@@ -63,6 +66,11 @@ const dispatcherTests = () => {
       it("should be able to tell if dispatchStr IS a string", function() {
         assert.equal(dispatcher.dispatchDayOne("test"), true);
       });
+
+      it("should update the totalDeliveires variable", function() {
+        dispatcher.dispatchDayOne('^v^v^v^v^v');
+        assert.equal(dispatcher.totalDeliveries, 2);
+      });
     });
 
     describe('dispatchDayTwo()', function () {
@@ -80,10 +88,9 @@ const dispatcherTests = () => {
       const driver = new DeliveryAid();
       const goat = new DeliveryAid();
 
-      
-      it("should be able to tell if odd or even", function() {
+      it("should update the totalDeliveires variable", function() {
         dispatcher.dispatchDrivers(driver, goat, '^v^v^v^v^v');
-        assert.equal(true, true);
+        assert.equal(dispatcher.totalDeliveries, 11);
       });
     });
     

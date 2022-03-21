@@ -21,9 +21,7 @@ const deliveryAidTests = () => {
         '0,0': 1
       }
 
-      deliveryAid.dispatch('^>v<')
-
-      // console.log('deliveryAid.housesDelivered',deliveryAid.housesDelivered)
+      deliveryAid.dispatch('^>v<');
       
       it('should return the housesDelivered Obj', () => {
         assert.deepEqual(deliveryAid.getHousesDelivered(), { '0,0': 2, '0,1': 1, '1,1': 1, '1,0': 1 });
@@ -66,7 +64,6 @@ const deliveryAidTests = () => {
         }
 
         deliveryAid.dispatch('>');
-        // console.log('deliveryAid.loocation', deliveryAid.loocation)
         assert.deepEqual(deliveryAid.getLocation(), [1,0]);
       });
       it('should call the move method with each iteration', () =>{
@@ -76,7 +73,6 @@ const deliveryAidTests = () => {
         }
 
         deliveryAid.dispatch('^>v<');
-        // console.log('deliveryAid.loocation', deliveryAid.loocation)
         assert.deepEqual(deliveryAid.getLocation(), [0,0]);
       });
     });
@@ -114,18 +110,7 @@ const deliveryAidTests = () => {
 
         assert.deepEqual(deliveryAid.getLocation(), [0,1]);
       });
-    });
-
-    // describe('mocha before hooks', function () {
-    //   before(() => console.log('*** top-level before()'));
-    //   beforeEach(() => console.log('*** top-level beforeEach()'));
-    //   describe('nesting', function () {
-    //     before(() => console.log('*** nested before()'));
-    //     beforeEach(() => console.log('*** nested beforeEach()'));
-    //     it('is a nested spec', () => true);
-    //   });
-    // });
-    
+    });    
   });
 }
 

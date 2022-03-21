@@ -42,11 +42,8 @@ class DeliveryAid{
   }
 
   dispatch(dispatchStr){
-    //iterate through and call move()
     for(const direction of dispatchStr.split('')){
-
       this.move(direction);
-      
     }
   }
 

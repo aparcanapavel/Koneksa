@@ -3,6 +3,7 @@ const DeliveryAid = require('./DeliveryAid');
 class Dispatcher {
   constructor(dispatchString) {
     this.dispatchString = dispatchString;
+    this.totalDeliveries;
   }
 
   getDispatch(){ return this.dispatchString; }
@@ -38,7 +39,7 @@ class Dispatcher {
 
     if(driver){
       driver.dispatch(dispatchStr);
-      console.log('\nPizzas Delivered: ', driver.getPizzasDelivered())
+      this.totalDeliveries = driver.getPizzasDelivered();// need test
     }
     
     return true;
@@ -77,10 +78,12 @@ class Dispatcher {
     const goatDeliveries = goat.getHousesDelivered();
 
     const totalDeliveries = Object.assign(driverDeliveries, goatDeliveries);
-    console.log(string)
-    console.log('Diver Deliveries: ', driver.getHousesDelivered());
-    console.log('GOAT Deliveries: ', goat.getHousesDelivered());
-    console.log('Total Houses: ', Object.keys(totalDeliveries).length);
+
+    this.totalDeliveries = Object.keys(totalDeliveries).length;
+  }
+
+  printTotals(){
+    console.log('total houses delivered to: ', this.totalDeliveries);
   }
 
 }
