@@ -20,5 +20,8 @@
   "devDependencies": {
     "mocha": "^9.2.2",
     "request": "^2.88.2"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
   }
 }

@@ -1,12 +1,22 @@
-// file will trigger the rest of the code and prompt the user to enter a dispatch on the console
+const Dispatcher = require('./models/Dispatcher');
+const DeliveryAid = require('./models/DeliveryAid');
+const prompt = require('prompt-sync')();
+
 class PizzaDelivery{
   constructor(){
+    this.currentDay = 1;
+  }
 
+  start(){
+    const dispatchString = prompt('Enter Dispatch String: ');
+    console.log('dispatch str', dispatchString);
   }
 }
 
-new PizzaDelivery();
+const pizzaDeliver = new PizzaDelivery();
+// if(pizzaDeliver) pizzaDeliver.start();
 
+module.exports = PizzaDelivery;
 
 /**
  * Flow:
