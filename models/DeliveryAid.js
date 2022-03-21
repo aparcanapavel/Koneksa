@@ -1,6 +1,6 @@
 class DeliveryAid{
   constructor(){
-    this.location = [0,0] // to know their whereabouts
+    this.location = [0,0]
     this.housesDelivered = {
       '0,0': 1
     }
@@ -11,7 +11,6 @@ class DeliveryAid{
   }
 
   getPizzasDelivered(){
-    // return the length of keys of the Houses delivered
     return Object.keys(this.housesDelivered).length;
   }
 
@@ -28,7 +27,6 @@ class DeliveryAid{
   }
 
   setCoordinates(coordinates){ 
-    // validate coordinates & updates pizzas delivered
     if(coordinates instanceof Array){
       this.location = coordinates; 
       

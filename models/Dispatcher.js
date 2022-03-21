@@ -8,11 +8,6 @@ class Dispatcher {
 
   getDispatch(){ return this.dispatchString; }
 
-  /**
-   * dispatch();
-   * determines what part to execute.
-   * @param switchKey
-   */
   dispatch(switchKey){
     const switchInt = parseInt(switchKey);
 
@@ -27,11 +22,6 @@ class Dispatcher {
     return false;
   }
 
-  /**
-   * dispatchDayOne();
-   * sends the driver all the dispatchs at ones
-   * @param {string} dispatchStr
-   */
   dispatchDayOne(dispatchStr){
     if(typeof dispatchStr !== "string") return false;
     
@@ -64,10 +54,8 @@ class Dispatcher {
     let idx = 0;
     for(const direction of string.split('')){
       if(idx%2){
-        // odd 1,3,5...
         driver.move(direction);
       } else {
-        // even 0,2,4...
         goat.move(direction);
       }
       
