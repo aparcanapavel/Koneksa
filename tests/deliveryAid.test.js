@@ -44,6 +44,29 @@ const deliveryAidTests = () => {
       });
     });
 
+    describe('dispatch()', () => {
+      it('should call the move method with each iteration', () =>{
+        deliveryAid.setCoordinates([0,0]);
+        deliveryAid.housesDelivered = {
+          '[0,0]': 1
+        }
+
+        deliveryAid.dispatch('>');
+        // console.log('deliveryAid.loocation', deliveryAid.loocation)
+        assert.deepEqual(deliveryAid.getLocation(), [1,0]);
+      });
+      it('should call the move method with each iteration', () =>{
+        deliveryAid.setCoordinates([0,0]);
+        deliveryAid.housesDelivered = {
+          '[0,0]': 1
+        }
+
+        deliveryAid.dispatch('^>v<');
+        // console.log('deliveryAid.loocation', deliveryAid.loocation)
+        assert.deepEqual(deliveryAid.getLocation(), [0,0]);
+      });
+    });
+    
     describe('move()', () => {
       beforeEach(() => {
         deliveryAid.setCoordinates([0,0]);
