@@ -58,6 +58,8 @@ class Dispatcher {
   }
 
   dispatchDrivers(driver, goat, string){
+    if(!driver || !goat || !string) return;
+
     let idx = 0;
     for(const direction of string.split('')){
       if(idx%2){
@@ -71,12 +73,14 @@ class Dispatcher {
       idx += 1;
     }
 
-    const driverDeliveries = driver.getPizzasDelivered();
-    const goatDeliveries = goat.getPizzasDelivered();
-    
-    // console.log('Diver Deliveries: ', driverDeliveries);
-    // console.log('GOAT Deliveries: ', goatDeliveries);
-    // console.log('Total Houses: ', driverDeliveries + goatDeliveries);
+    const driverDeliveries = driver.getHousesDelivered();
+    const goatDeliveries = goat.getHousesDelivered();
+
+    const totalDeliveries = Object.assign(driverDeliveries, goatDeliveries);
+    console.log(string)
+    console.log('Diver Deliveries: ', driver.getHousesDelivered());
+    console.log('GOAT Deliveries: ', goat.getHousesDelivered());
+    console.log('Total Houses: ', Object.keys(totalDeliveries).length);
   }
 
 }

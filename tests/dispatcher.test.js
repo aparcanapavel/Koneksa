@@ -5,6 +5,7 @@ const dispatchString = '^^<<v<<v><v^^';
 const dispatcher = new Dispatcher(dispatchString);
 
 const dispatcherTests = () => {
+  
   describe("Dispatcher", function() {
     it("should set the dispatchString instance variable to the input", function() {
       assert.equal(dispatcher.dispatchString, dispatchString);
@@ -74,25 +75,17 @@ const dispatcherTests = () => {
       });
     });
 
-    // describe('dispatchDrivers()', function () {
-    //   const DeliveryAid = require('../models/DeliveryAid');
-    //   const driver = new DeliveryAid();
-    //   const goat = new DeliveryAid();
-    //   driver.setCoordinates([0,0]);
-    //   driver.housesDelivered = {
-    //     '0,0': 1
-    //   }
-    //   goat.setCoordinates([0,0]);
-    //   goat.housesDelivered = {
-    //     '0,0': 1
-    //   }
+    describe('dispatchDrivers()', function () {
+      const DeliveryAid = require('../models/DeliveryAid');
+      const driver = new DeliveryAid();
+      const goat = new DeliveryAid();
 
       
-    //   it("should be able to tell if odd or even", function() {
-    //     dispatcher.dispatchDrivers(driver, goat, '^v');
-    //     assert.equal(true, true);
-    //   });
-    // });
+      it("should be able to tell if odd or even", function() {
+        dispatcher.dispatchDrivers(driver, goat, '^v^v^v^v^v');
+        assert.equal(true, true);
+      });
+    });
     
   });
 }
