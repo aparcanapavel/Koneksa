@@ -12,7 +12,7 @@ class DeliveryAid{
 
   getPizzasDelivered(){
     // return the length of keys of the Houses delivered
-    console.log('this.housesDelivered', this.housesDelivered)
+    // console.log('this.housesDelivered', this.housesDelivered)
     return Object.keys(this.housesDelivered).length;
   }
 

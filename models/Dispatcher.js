@@ -16,10 +16,10 @@ class Dispatcher {
     const switchInt = parseInt(switchKey);
 
     if(switchInt === 1){
-      this.dispatchDriver(this.dispatchString);
+      this.dispatchDayOne(this.dispatchString);
       return true;
     } else if(switchInt === 2){
-
+      this.dispatchDayTwo(this.dispatchString);
       return true;
     }
 
@@ -27,11 +27,11 @@ class Dispatcher {
   }
 
   /**
-   * dispatchDriver();
+   * dispatchDayOne();
    * sends the driver all the dispatchs at ones
    * @param {string} dispatchStr
    */
-  dispatchDriver(dispatchStr){
+  dispatchDayOne(dispatchStr){
     if(typeof dispatchStr !== "string") return false;
     
     const driver = new DeliveryAid();
@@ -41,6 +41,15 @@ class Dispatcher {
       console.log('\nPizzas Delivered: ', driver.getPizzasDelivered())
     }
     
+    return true;
+  }
+
+  dispatchDayTwo(dispatchStr){
+    if(typeof dispatchStr !== "string") return false;
+
+    const driver = new DeliveryAid();
+    const goat = new DeliveryAid()
+
     return true;
   }
 

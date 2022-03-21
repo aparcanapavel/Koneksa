@@ -54,13 +54,23 @@ const dispatcherTests = () => {
       });
     });
 
-    describe('dispatchDriver()', function () {
+    describe('dispatchDayOne()', function () {
       it("should be able to tell if dispatchStr is NOT a string", function() {
-        assert.equal(dispatcher.dispatchDriver(123), false);
+        assert.equal(dispatcher.dispatchDayOne(123), false);
       });
 
       it("should be able to tell if dispatchStr IS a string", function() {
-        assert.equal(dispatcher.dispatchDriver("test"), true);
+        assert.equal(dispatcher.dispatchDayOne("test"), true);
+      });
+    });
+
+    describe('dispatchDayTwo()', function () {
+      it("should be able to tell if dispatchStr is NOT a string", function() {
+        assert.equal(dispatcher.dispatchDayTwo(123), false);
+      });
+
+      it("should be able to tell if dispatchStr IS a string", function() {
+        assert.equal(dispatcher.dispatchDayTwo("test"), true);
       });
     });
     
