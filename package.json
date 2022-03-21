@@ -1,7 +1,7 @@
 {
   "name": "koneksa",
   "version": "1.0.0",
-  "description": "Koneksa Coding Challenge about pizza delivery",
+  "description": "Koneksa Coding Challenge",
   "main": "index.js",
   "scripts": {
     "test": "mocha index.test.js",
